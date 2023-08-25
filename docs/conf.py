@@ -99,8 +99,8 @@ extensions += ['sphinx_gallery.gen_gallery']
 sphinx_gallery_conf = {
     'examples_dirs': '../python/tutorials/',
     'gallery_dirs': 'getting-started/tutorials',
-    'filename_pattern': '',
-    # XXX: Temporarily disable fused attention tutorial on V100
+    # Disable TMA tutorials from executing, which don't build with sphinx_gallery
+    'filename_pattern': '(?!09|10).*',
     'ignore_pattern': r'__init__\.py',
     'within_subsection_order': FileNameSortKey,
     'reference_url': {
